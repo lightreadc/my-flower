@@ -1,3 +1,41 @@
+.marquee-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0.10;
+}
+
+.marquee-track {
+    display: flex;
+    white-space: nowrap;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #c0606a;
+    letter-spacing: 4px;
+    animation: scroll-left 20s linear infinite;
+    text-transform: uppercase;
+}
+
+.marquee-track:nth-child(even) {
+    animation-direction: reverse;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
