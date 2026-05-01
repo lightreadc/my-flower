@@ -207,3 +207,26 @@ h2 {
     font-size: 18px;
     color: #e8394a;
 }
+
+@media (max-width:600px) {
+    h1 {
+        font-size: 56px;
+        letter-spacing: 4px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    #reading, #identity, #closing {
+        padding: 60px 24px;
+    }
+
+    .marquee-track {
+        font-size: 16px;
+    }
+}
