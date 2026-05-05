@@ -6,7 +6,7 @@ name.addEventListener("click", function() {
     const month = today.getMonth() + 1;
     const day = today.getDate();
 
-    if (month === 5 && day === 5) {
+    if (month === 9 && day === 25) {
         popup.style.display = "flex";
         launchConfetti();
     }
