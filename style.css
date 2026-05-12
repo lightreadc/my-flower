@@ -308,3 +308,47 @@ h2 {
         opacity: 0;
     }
 }
+
+#tulip-cursor {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: left 0.08s ease, top 0.08s ease;
+}
+
+* {
+    cursor: none;
+}
+
+.petal {
+    position: fixed;
+    top: -50px;
+    pointer-events: none;
+    z-index: -1;
+    width: 10px;
+    height: 16px;
+    background: #e8394a;
+    border-radius: 50% 0 50% 0;
+    animation: petal-fall linear forwards;
+    opacity: 0.4;
+}
+
+@keyframes petal-fall {
+    0% {
+        transform: translateY(0) rotate(0deg); }
+    100% {
+        transform: translateY(110vh) rotate(360deg); }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

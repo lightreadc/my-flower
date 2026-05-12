@@ -31,3 +31,41 @@ function launchConfetti() {
         confettiContainer.appendChild(peice);
     }
 }
+
+const tulip = document.getElementById("tulip-cursor");
+
+document.addEventListener("mousemove", function(e) {
+    tulip.style.left = e.clientX + "px";
+    tulip.style.top = e.clientY + "px";
+});
+
+function createpetal() {
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+    petal.innerHTML = "";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = Math.random() * 3 + 4 + "s";
+    petal.style.fontSize = (Math.random() * 12 + 10) + "px";
+    petal.style.opacity = Math.random()* 0.5 + 0.3;
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 7000);
+}
+
+setInterval(createpetal, 800);
+
+const sections = document.querySelectorAll(".fade-in");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.2 });
+
+sections.forEach(section => {
+    observer.observe(section);
+});
