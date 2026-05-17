@@ -71,6 +71,7 @@ h1 {
     font-size: 96px;
     color: #e8394a;
     letter-spacing: 8px;
+    text-shadow: 0 0 20px rgba(232, 57, 74, 0.3), 0 0 40px rgba(192, 96, 106, 0.5);
 }
 
 .tagline {
