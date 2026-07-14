@@ -162,7 +162,7 @@ h2 {
 }
 
 #closing {
-    padding: 40px 40px;
+    padding: 100px 40px;
     text-align: center;
     max-width: 700px;
     margin: 0 auto;
@@ -352,24 +352,4 @@ h2 {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-footer {
-    padding: 12px 40px 24px;
-    text-align: center;
-    margin-top: 0;
-}
-
-.easter-egg {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: #3d1515;
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: color 0.3s ease;
-}
-
-.easter-egg:hover {
-    color: #e8394a;
 }
