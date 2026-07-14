@@ -400,7 +400,7 @@ footer {
   .marquee-track { font-size: 16px; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   h1 {
     font-size: 64px;
     letter-spacing: 4px;
