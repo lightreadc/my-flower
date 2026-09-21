@@ -306,6 +306,12 @@ footer {
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 60px var(--glow);
+  animation: rise-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes rise-up {
+  0% { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 .popup-label {
@@ -331,6 +337,8 @@ footer {
   line-height: 2;
   color: var(--muted);
   margin-bottom: 36px;
+  min-height: 200px;
+  text-align: left;
 }
 
 .popup-close {
@@ -358,7 +366,13 @@ footer {
   width: 8px;
   height: 8px;
   border-radius: 2px;
+  top: -20px;
   animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(600px) rotate(360deg); opacity: 0; }
 }
 
 @keyframes fall {
@@ -446,4 +460,28 @@ footer {
   .marquee-track {
     font-size: 14px;
   }
+}
+
+.countdown-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 140px;
+  color: var(--red);
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(232, 57, 74, 0.5), 0 0 80px rgba(232, 57, 74, 0.2);
+  margin: 24px 0;
+  animation: glow-pulse 2s ease infinite;
+}
+
+.countdown-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--muted);
+  letter-spacing: 4px;
+  margin-bottom: 36px;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 40px rgba(232, 57, 74, 0.5), 0 0 80px rgba(232, 57, 74, 0.2); }
+  50% { text-shadow: 0 0 60px rgba(232, 57, 74, 0.8), 0 0 120px rgba(232, 57, 74, 0.4); }
 }

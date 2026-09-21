@@ -1,16 +1,30 @@
 const name = document.getElementById("andrea-name");
 const popup = document.getElementById("birthday-popup");
 
-name.addEventListener("click", function() {
-    const today = new Date();
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
+name.addEventListener('click', function() {
+  const today = new Date();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
 
-    if (month === 9 && day === 23) {
-        popup.style.display = "flex";
-        launchConfetti();
-    }
+  if (month === 9 && day === 23) {
+    popup.style.display = 'flex';
+    popup.classList.add('show');
+    launchConfetti();
+    typeWriter();
+  } else {
+    const birthday = new Date(today.getFullYear(), 8, 23);
+    if (today > birthday) birthday.setFullYear(birthday.getFullYear() + 1);
+    const diff = Math.ceil((birthday - today) / (1000 * 60 * 60 * 24));
+    showCountdown(diff);
+  }
 });
+
+function showCountdown(days) {
+  const countdown = document.getElementById('countdown-popup');
+  countdown.style.display = 'flex';
+  countdown.classList.add('show');
+  document.getElementById('days-count').textContent = days;
+}
 
 function closePopup() {
     popup.style.display = "none";
@@ -18,18 +32,19 @@ function closePopup() {
 }
 
 function launchConfetti() {
-    const confettiContainer = document.getElementById("confetti-container");
-    const colors = ['#e8394a', '#c0606a', '#f5e6e6', '#2a0d0d'];
+  const container = document.getElementById('confetti-container');
+  const colors = ['#e8394a', '#c0606a', '#f5e6e6', '#ff9eb5', '#gold'];
 
-    for (let i = 0; i < 80; i++) {
-        const peice = document.createElement("div");
-        peice.classList.add("confetti-piece");
-        peice.style.left = Math.random() * 100 + "%";
-        peice.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        peice.style.animationDelay = (Math.random() * 2) + "s";
-        peice.style.animationDuration = (Math.random() * 2 + 2) + "s";
-        confettiContainer.appendChild(peice);
-    }
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    piece.classList.add('confetti-piece');
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.top = '-20px';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDelay = Math.random() * 3 + 's';
+    piece.style.animationDuration = Math.random() * 2 + 3 + 's';
+    container.appendChild(piece);
+  }
 }
 
 const tulip = document.getElementById("tulip-cursor");
@@ -69,3 +84,23 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
     observer.observe(section);
 });
+
+function typeWriter() {
+  const message = document.querySelector('.popup-message');
+  const text = message.textContent;
+  message.textContent = '';
+  message.style.opacity = '1';
+  
+  let i = 0;
+  const speed = 30;
+
+  function type() {
+    if (i < text.length) {
+      message.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  setTimeout(type, 800);
+}

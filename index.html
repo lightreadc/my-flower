@@ -102,17 +102,31 @@
                 <p class="signature"> Written with love, for My Beautiful Tulip 🌷</p>
             </div>
         </section>
-        <div id="birthday-popup" class="popup-overlay">
-            <div class="popup-box">
-                <div id="confetti-container"></div>
-                <p class="popup-label">Happy Birthday, My Flower</p>
-                <h2 class="popup-name">Andrea</h2>
-                <p class="popup-message">
-                    Happy birthday to My Beautiful flower, May God almighty bless you with a year filled with love, joy, and countless blessings. You are deeply loved and cherished, and I am grateful for every moment we share together. Here's to another year of happiness and growth. I love you more than words can express. May our love last for all genration and continue to give happiness to everyone in this small world.
-                </p>
-                <button class="popup-close" onclick="closePopup()">Close ✦</button>
+            <div id="birthday-popup" class="popup-overlay">
+                <div class="popup-box">
+                    <div id="confetti-container"></div>
+                    <p class="popup-label">Happy Birthday, My Flower</p>
+                    <h2 class="popup-name">Andrea</h2>
+                    <p class="popup-message">
+                    Happiest Birthday to My Most Beautiful flower, May God Almighty 
+                    bless you with a year filled with Love, Joy, and Countless 
+                    blessings. You are so deeply loved and cherished, and I am so very
+                    grateful for every single moment we share together. Here's to 
+                    another year of happiness and growth. I love you more 
+                    than my words can ever express.
+                    </p>
+                    <button class="popup-close" onclick="closePopup()">Close ✦</button>
+                </div>
             </div>
-        </div>
+
+            <div id="countdown-popup" class="popup-overlay">
+                <div class="popup-box">
+                    <p class="popup-label">something special is coming 🌷</p>
+                    <div class="countdown-number" id="days-count">0</div>
+                    <p class="countdown-text">days until her birthday</p>
+                    <button class="popup-close" onclick="document.getElementById('countdown-popup').style.display='none'">close ✦</button>
+                </div>
+            </div>
         <script src="script.js"></script>
         <footer>
             <a href="v1.html" class="easter-egg">The Beginning 🌷</a>
